@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIncomePaymentTable extends Migration
+class AddIncomeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddIncomePaymentTable extends Migration
      */
     public function up()
     {
-        Schema::create('income_payment', function (Blueprint $table) {
+        Schema::create('income', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->comment('用户');
             $table->integer('cate_id')->comment('条目ID');
@@ -33,6 +33,6 @@ class AddIncomePaymentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('income_payment');
+        Schema::dropIfExists('income');
     }
 }
